@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    margin: 10px auto;
+}
+
+form {
+    width: 800px;
+    margin: 0 auto;
+}
+
+form>input {
+    height: 2rem;
+    padding: 0 2px;
+}
+
+.cards{
+    background-color: blue;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    place-items: center;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.card{
+    background-color: red;
+    width: 200px;
+    height: 300px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.poster {
+    width: 150px;
+    height: 250px;
+}
+
+.pagination {
+    display: flex;
+    width: 800px;
+    margin: 5px auto;
+    gap: 5px;
+    justify-content: center;
+}
+
+.pagination>a {
+    background-color: lightcoral;
+    padding: 10px 15px;
+    color: white;
+    border-radius: 10px;
+}
