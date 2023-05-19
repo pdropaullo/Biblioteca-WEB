@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{% static 'detalhes.css' %}">
+    <title>Detalhes</title>
+</head>
+
+<body>
+    <div class="card">
+        <div class="imagem">
+            {% if midia.imagem %}
+            <img class="profile" src="{{ midia.imagem.url }}" alt="">
+            {% else %}
+            <img class="profile" src="https://cdn-icons-png.flaticon.com/512/1695/1695213.png" alt="">
+            {% endif %}
+        </div>
+        <div class="infos">
+            <div class="title">
+                <h3 id="oque">Title:</h3>
+                <h3 id="info">{{midia.title}}</h3>
+            </div>
+            <div class="release_year">
+                <h3 id="oque">Release Year:</h3>
+                <h3 id="info">{{midia.release_year}}</h3>
+            </div>
+            <div class="director">
+                <h3 id="oque">Director:</h3>
+                <h3 id="info">{{midia.director}}</h3>
+            </div>
+            <div class="description">
+                <h3 id="oque">Description:</h3>
+                <h3 id="info">{{midia.description}}</h3>
+            </div>
+            <div class="created_at">
+                <h3 id="oque">Created At:</h3>
+                <h3 id="info">{{midia.created_at}}</h3>
+            </div>
+        </div>
+        <div class="buttons">
+            <a href="{% url 'deletar' midia.id %}" id="apagar">APAGAR</a>
+            <a href="{% url 'editar' midia.id %}" id="editar">EDITAR</a>
+        </div>
+    </div>
+</body>
+
+</html>

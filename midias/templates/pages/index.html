@@ -19,22 +19,33 @@
         <li>{{ midia.title }}</li>
         {% endfor %}
     </ul> -->
-    <h1>Biblioteca</h1>
+    <h1 class="titulo"><a href="{% url 'home' %}">Biblioteca</a></h1>
 
-    <form action="{% url 'busca' %}">
-        <input type="text" name="search" placeholder="Buscar midia...">
-        <button type="submit">Buscar</button>
-    </form>
-
-    {% for midia in midias %}
-    <div class="cards">
-        <div class="card">
-            <img class="poster" src="https://source.unsplash.com/150x250/?spiderman" alt="">
-            <h3 class="title">{{midia.title}}</h3>
-            <h3 class="year">{{midia.release_year}}</h3>
+    <div class="funcoes">
+        <form action="{% url 'busca' %}">
+            <input type="text" name="search" placeholder="Buscar midia...">
+            <button type="submit">Buscar</button>
+        </form>
+        <div class="adicionar">
+            <a class="add" href="{% url 'adicionar' %}">+ Adicionar Midia</a>
+        </div>
+        <div class="filtros">
+            <a class="ativo" href="">Ativos</a>
+            <a class="inativo" href="">Inativos</a>
         </div>
     </div>
-    {% endfor %}
+
+
+    <div class="cards">
+        {% for midia in midias %}
+        <div class="card">
+            <img class="poster" src="https://source.unsplash.com/150x250/?spiderman" alt="">
+            <h3 class="title"><a href="{% url 'detalhes' midia.id %}">{{midia.title}}</a></h3>
+            <h3 class="year">{{midia.release_year}}</h3>
+        </div>
+        {% endfor %}
+    </div>
+
 
     <div class="pagination">
         <a href="">1</a>
@@ -43,6 +54,7 @@
         <a href="">4</a>
         <a href="">5</a>
     </div>
+    <a class="sair" href="{% url 'logout' %}">Sair</a>
 </body>
 
 </html>

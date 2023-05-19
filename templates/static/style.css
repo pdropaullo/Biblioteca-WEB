@@ -7,22 +7,103 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-h1 {
+.titulo {
     text-align: center;
     margin: 10px auto;
 }
 
-form {
+.funcoes {
     width: 800px;
-    margin: 0 auto;
+    margin: 40px auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+form {
+    display: flex;
 }
 
 form>input {
-    height: 2rem;
+    height: 40px;
     padding: 0 2px;
+    border: 1px solid;
+    border-radius: 5px;
+    margin-right: 5px;
+    font-size: 14px;
 }
 
-.cards{
+form>button {
+    width: 100px;
+    height: 40px;
+    background-color: lightcoral;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 18px;
+    transition: .5s;
+}
+
+form>button:hover {
+    cursor: pointer;
+    opacity: .8;
+    color: black;
+}
+
+.adicionar {
+    display: flex;
+}
+
+.add {
+    background-color: lightcoral;
+    border: none;
+    font-size: 18px;
+    padding: 5px;
+    width: 200px;
+    height: 40px;
+    color: white;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .5s;
+}
+
+.filtros {
+    display: flex;
+    gap: 10px;
+}
+
+.ativo,
+.inativo {
+    border: none;
+    font-size: 18px;
+    padding: 5px;
+    width: 100px;
+    height: 40px;
+    color: white;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .5s;
+}
+
+.ativo {
+    background-color: green;
+}
+
+.inativo {
+    background-color: red;
+}
+
+.add:hover,
+.ativo:hover,
+.inativo:hover {
+    opacity: .8;
+    color: black;
+}
+
+.cards {
     background-color: blue;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -32,7 +113,7 @@ form>input {
     margin: 0 auto;
 }
 
-.card{
+.card {
     background-color: red;
     width: 200px;
     height: 300px;
@@ -61,4 +142,39 @@ form>input {
     padding: 10px 15px;
     color: white;
     border-radius: 10px;
+    transition: .5s;
+}
+
+.pagination>a:hover {
+    opacity: .8;
+    color: black;
+}
+
+#check {
+    color: green;
+}
+
+#over {
+    color: red;
+}
+
+.sair {
+    background-color: red;
+    border: none;
+    font-size: 18px;
+    padding: 5px;
+    width: 100px;
+    height: 40px;
+    color: white;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px auto;
+    transition: .5s;
+}
+
+.sair:hover {
+    opacity: .8;
+    color: black;
 }
